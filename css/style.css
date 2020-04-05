@@ -19,9 +19,61 @@
   padding: 10px 20px;
 }
 
-.logo {
-  min-height: 25px;
-  max-height: 50px;
+a.logo {
+  height: 40px;
+}
+
+.logo img {
+  height: 40px;
+}
+
+#hamburger-checkbox {
+  display: none;
+}
+
+#hamburger-checkbox:checked ~ .nav-main {
+  display: block;
+}
+
+#hamburger-icon {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+}
+
+#hamburger-icon span {
+  display: block;
+  margin: 15px 0;
+  background: black;
+  height: 3px;
+  width: 40px;
+}
+
+#hamburger-icon span::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: black;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+#hamburger-icon span::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: black;
+  -webkit-transform: translateY(-13px);
+          transform: translateY(-13px);
+}
+
+nav.nav-main ul {
+  display: block;
+  width: 100%;
 }
 
 nav.nav-main ul li {
@@ -34,5 +86,31 @@ nav.nav-main ul li a {
   text-decoration: none;
   padding: 10px;
   color: #fdfdfd;
+}
+
+@media (max-width: 700px) {
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: start;
+  }
+  #hamburger-icon {
+    display: block;
+  }
+  nav.nav-main {
+    display: none;
+    width: 100%;
+  }
+  nav.nav-main ul li {
+    display: block;
+    text-align: center;
+  }
+  nav.nav-main ul li a {
+    width: 100%;
+  }
 }
 /*# sourceMappingURL=style.css.map */
